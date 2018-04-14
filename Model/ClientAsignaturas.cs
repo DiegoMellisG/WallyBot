@@ -14,6 +14,6 @@ namespace LuisBot.Model
         };
 
         public Asignatura GetAsignatura(string name)
-            => asignaturas.ContainsKey(name.ToLower()) ? characters[name.ToLower()] : null;
+            => asignaturas.ContainsKey(name.ToLower()) ? asignaturas[name.ToLower()] : null;
     }
 }

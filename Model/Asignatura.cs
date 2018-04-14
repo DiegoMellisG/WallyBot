@@ -8,8 +8,6 @@ namespace LuisBot.Model
     [Serializable]
     public class Asignatura
     {
-        public Asignatura();
-
         public Asignatura(string name, string code) { this.Name = name; this.Code = code; }
 
         public string Name { get; set; }
