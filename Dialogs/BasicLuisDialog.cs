@@ -31,7 +31,7 @@ namespace Microsoft.Bot.Sample.LuisBot
         {
             await context.PostAsync($"Super!. ¿En qué te puedo ayudar?");
         }
-        [LuisIntent("Nombre")]
+        [LuisIntent("Conocer")]
         public async Task NombreIntent(IDialogContext context, LuisResult result)
         {
             await context.PostAsync($"Mi nombre es WallyBotsito y estoy para servirte en algunas cosas por mientras voy aprendiendo.");
