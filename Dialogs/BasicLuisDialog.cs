@@ -50,5 +50,11 @@ namespace Microsoft.Bot.Sample.LuisBot
             await context.PostAsync($"You have reached {result.Intents[0].Intent}. You said: {result.Query}");
             context.Wait(MessageReceived);
         }
+
+        [LuisIntent("getDay")]
+        public async Task SubjectIntent(IDialogContext context, LuisResult result)
+        {
+            await context.PostAsync($"Tienes PLF bastardito");
+        }
     }
 }
