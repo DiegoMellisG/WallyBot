@@ -38,11 +38,7 @@ namespace Microsoft.Bot.Sample.LuisBot
         {
             await this.ShowLuisResult(context, result);
         }
-        [LuisIntent("None")]
-        public async Task NoneIntent(IDialogContext context, LuisResult result)
-        {
-            await this.ShowLuisResult(context, result);
-        }
+
 
         private async Task ShowLuisResult(IDialogContext context, LuisResult result)
         {
