@@ -26,6 +26,11 @@ namespace Microsoft.Bot.Sample.LuisBot
         {
             await context.PostAsync($"Hola, cómo estás Javier?");
         }
+        [LuisIntent("Estado")]
+        public async Task EstadoIntent(IDialogContext context, LuisResult result)
+        {
+            await context.PostAsync($"Super!. ¿En qué te puedo ayudar?");
+        }
 
         [LuisIntent("Horario")]
         public async Task HorarioIntent(IDialogContext context, LuisResult result)
