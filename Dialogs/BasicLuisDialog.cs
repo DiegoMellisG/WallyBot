@@ -30,6 +30,14 @@ namespace Microsoft.Bot.Sample.LuisBot
         public async Task HorarioDiaIntent(IDialogContext context, LuisResult result)
         {
             await context.PostAsync($"Hoy día...");
+            EntityRecommendation day;
+            if (result.TryFindEntity("datetimeV2", out day))
+                if(day.Equals("lunes"))
+                    await context.PostAsync($"Tienes PLF");
+                else
+                    await context.PostAsync($"No tienes clases");
+            await context.PostAsync($"{day.ToString()}");
+
             await this.ShowLuisResult(context, result);
         }
 
@@ -38,7 +46,11 @@ namespace Microsoft.Bot.Sample.LuisBot
         {
             await this.ShowLuisResult(context, result);
         }
-
+        [LuisIntent("None")]
+        public async Task NoneIntent(IDialogContext context, LuisResult result)
+        {
+            await this.ShowLuisResult(context, result);
+        }
 
         private async Task ShowLuisResult(IDialogContext context, LuisResult result)
         {
