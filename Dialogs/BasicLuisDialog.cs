@@ -27,26 +27,27 @@ namespace Microsoft.Bot.Sample.LuisBot
 
         // Go to https://luis.ai and create a new intent, then train/publish your luis app.
         // Finally replace "Gretting" with the name of your newly created intent in the following handler
-        [LuisIntent("getHorario")]
-        public async Task GreetingIntent(IDialogContext context, LuisResult result)
+        [LuisIntent("Horario")]
+        public async Task HorarioIntent(IDialogContext context, LuisResult result)
         {
             await this.ShowLuisResult(context, result);
         }
 
-        [LuisIntent("Cancel")]
-        public async Task CancelIntent(IDialogContext context, LuisResult result)
+        [LuisIntent("HorarioDia")]
+        public async Task HorarioDiaIntent(IDialogContext context, LuisResult result)
+        {
+            await context.PostAsync($"Hoy día...");
+            await this.ShowLuisResult(context, result);
+        }
+
+        [LuisIntent("Pruebas")]
+        public async Task PruebasIntent(IDialogContext context, LuisResult result)
         {
             await this.ShowLuisResult(context, result);
         }
 
-        [LuisIntent("Help")]
-        public async Task HelpIntent(IDialogContext context, LuisResult result)
-        {
-            await this.ShowLuisResult(context, result);
-        }
-
-        [LuisIntent("getDay")]
-        public async Task SubjectIntent(IDialogContext context, LuisResult result)
+        [LuisIntent("None")]
+        public async Task NoneIntent(IDialogContext context, LuisResult result)
         {
             await this.ShowLuisResult(context, result);
         }
