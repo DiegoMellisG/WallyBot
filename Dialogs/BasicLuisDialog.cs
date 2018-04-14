@@ -18,13 +18,6 @@ namespace Microsoft.Bot.Sample.LuisBot
             domain: ConfigurationManager.AppSettings["LuisAPIHostName"])))
         {
         }
-
-        [LuisIntent("None")]
-        public async Task NoneIntent(IDialogContext context, LuisResult result)
-        {
-            await this.ShowLuisResult(context, result);
-        }
-
         // Go to https://luis.ai and create a new intent, then train/publish your luis app.
         // Finally replace "Gretting" with the name of your newly created intent in the following handler
         [LuisIntent("Horario")]
@@ -42,6 +35,11 @@ namespace Microsoft.Bot.Sample.LuisBot
 
         [LuisIntent("Pruebas")]
         public async Task PruebasIntent(IDialogContext context, LuisResult result)
+        {
+            await this.ShowLuisResult(context, result);
+        }
+        [LuisIntent("None")]
+        public async Task NoneIntent(IDialogContext context, LuisResult result)
         {
             await this.ShowLuisResult(context, result);
         }
