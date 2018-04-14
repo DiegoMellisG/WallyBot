@@ -32,11 +32,11 @@ namespace Microsoft.Bot.Sample.LuisBot
             await context.PostAsync($"Super!. ¿En qué te puedo ayudar?");
         }
         [LuisIntent("Nombre")]
-        public async Task EstadoIntent(IDialogContext context, LuisResult result)
+        public async Task NombreIntent(IDialogContext context, LuisResult result)
         {
             await context.PostAsync($"Mi nombre es WallyBotsito y estoy para servirte en algunas cosas por mientras voy aprendiendo.");
         }
-
+        
         [LuisIntent("Horario")]
         public async Task HorarioIntent(IDialogContext context, LuisResult result)
         {
@@ -66,10 +66,16 @@ namespace Microsoft.Bot.Sample.LuisBot
         {
             await this.ShowLuisResult(context, result);
         }
+        [LuisIntent("Despedida")]
+        public async Task DespedidaIntent(IDialogContext context, LuisResult result)
+        {
+            await context.PostAsync($"Estaré atento a tus proximas preguntas, siempre recuerda que estaré a tus servicios.");
+        }
         [LuisIntent("None")]
         public async Task NoneIntent(IDialogContext context, LuisResult result)
         {
-            await this.ShowLuisResult(context, result);
+            //await this.ShowLuisResult(context, result);
+            await context.PostAsync($"Aún no he aprendido a responder esa pregunta, en el futuro podré satisfacer tus necesidades.");
         }
 
         private async Task ShowLuisResult(IDialogContext context, LuisResult result)
