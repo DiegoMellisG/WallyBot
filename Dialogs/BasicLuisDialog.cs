@@ -48,8 +48,7 @@ namespace Microsoft.Bot.Sample.LuisBot
         [LuisIntent("getDay")]
         public async Task SubjectIntent(IDialogContext context, LuisResult result)
         {
-            await context.PostAsync($"Tienes PLF bastardito");
-            context.Wait(MessageReceived);
+            await this.ShowLuisResult(context, result);
         }
 
         private async Task ShowLuisResult(IDialogContext context, LuisResult result)
