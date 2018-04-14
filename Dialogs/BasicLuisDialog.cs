@@ -23,7 +23,7 @@ namespace Microsoft.Bot.Sample.LuisBot
         [LuisIntent("Horario")]
         public async Task HorarioIntent(IDialogContext context, LuisResult result)
         {
-            await this.ShowLuisResult(context, result);
+            await context.PostAsync($"Tu horarios es:\nL1 - Sistope\nL2 - PLF\nM1 - DBD");
         }
 
         [LuisIntent("HorarioDia")]
