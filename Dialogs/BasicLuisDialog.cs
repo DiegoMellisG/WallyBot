@@ -45,16 +45,17 @@ namespace Microsoft.Bot.Sample.LuisBot
             await this.ShowLuisResult(context, result);
         }
 
-        private async Task ShowLuisResult(IDialogContext context, LuisResult result) 
-        {
-            await context.PostAsync($"You have reached {result.Intents[0].Intent}. You said: {result.Query}");
-            context.Wait(MessageReceived);
-        }
-
         [LuisIntent("getDay")]
         public async Task SubjectIntent(IDialogContext context, LuisResult result)
         {
             await context.PostAsync($"Tienes PLF bastardito");
+            context.Wait(MessageReceived);
+        }
+
+        private async Task ShowLuisResult(IDialogContext context, LuisResult result)
+        {
+            await context.PostAsync($"You have reached {result.Intents[0].Intent}. You said: {result.Query}");
+            context.Wait(MessageReceived);
         }
     }
 }
