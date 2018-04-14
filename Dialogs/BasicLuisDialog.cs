@@ -20,7 +20,11 @@ namespace Microsoft.Bot.Sample.LuisBot
         }
         // Go to https://luis.ai and create a new intent, then train/publish your luis app.
         // Finally replace "Gretting" with the name of your newly created intent in the following handler
-
+        [LuisIntent("Start")]
+        public async Task BienvenidaIntent(IDialogContext context, LuisResult result)
+        {
+            
+        }
         [LuisIntent("Bienvenida")]
         public async Task BienvenidaIntent(IDialogContext context, LuisResult result)
         {
